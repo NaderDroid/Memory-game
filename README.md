@@ -1,5 +1,5 @@
-## wdi-fundamentals-memorygame
+# wdi-fundamentals-memorygame
 
-# memory-game
+## memory-game
 
 This will host the memory-game excersize from GA
