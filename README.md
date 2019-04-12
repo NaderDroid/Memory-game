@@ -2,4 +2,4 @@
 
 ## memory-game
 
-This will host the memory-game excersize from GA
+This will host the memory-game exercise from GA
