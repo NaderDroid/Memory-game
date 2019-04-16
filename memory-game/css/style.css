@@ -67,6 +67,7 @@ footer {
     font-size: 14px;
     letter-spacing: .8em;
     font-weight: 500;
+    
 }
 
 .copyright {
@@ -91,4 +92,12 @@ footer {
 .name {
     font-weight: 700;
     color: #F15B31;
+}
+.cr {
+    float: left;
+    font-size: 38px;
+    font-family: Raleway, sans-serif;
+    color: #F15B31;
+    
+    
 }
