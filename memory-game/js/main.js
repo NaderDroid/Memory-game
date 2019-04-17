@@ -24,10 +24,17 @@ var cards = [
 
 var cardsInPlay = [];
 
-var checkCards = function () {
+var flipCard = function () {
+
+    var cardId = this.getAttribute('data-id');
+    cardsInPlay.push(cards[cardId].rank);
+    console.log("you flipped: " + cards[cardId].rank);
+    console.log(cards[cardId].suit);
+    console.log(cards[cardId].cardImage);
+    this.setAttribute('src' , cards[cardId].cardImage);
 
     if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {
-        alert("God damn it, you made it")
+        alert("Aawww, you made it")
     }
 
     else if (cardsInPlay.length === 2) {
@@ -38,27 +45,18 @@ var checkCards = function () {
         alert("No Enough Plays");
     }
 };
-var flipCard = function (cardId) {
 
-   /* These lines of code have been moved to checkCards()
+function createBoard() {
+ for (var i = 0; i<cards.length; i++) {
+     var cardElement = document.createElement('img');
+     cardElement.setAttribute('src', 'images/back.png');
+     cardElement.setAttribute('data-id' , i);
+     cardElement.addEventListener("click", flipCard);
 
-    var cardOne = cards[1];
-    cardsInPlay.push(cardOne);
-    console.log("User flipped " + cardOne);
-    var cardTwo = cards[0];
-    cardsInPlay.push(cardTwo);
-    console.log("User flipped " + cardTwo);
-*/
-    cardsInPlay.push(cards[cardId].rank);
-    console.log("you flipped: " + cards[cardId].rank);
-    console.log(cards[cardId].suit);
-    console.log(cards[cardId].cardImage);
-
-
-};
-        flipCard(1);
-        flipCard(0);
-
-checkCards();
+     var gameBoard = document.getElementById('game-board');
+     gameBoard.appendChild(cardElement);
+ }
+}
+    createBoard();
 
 
